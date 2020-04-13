@@ -46,9 +46,9 @@ CfgInfoDlg.close = function() {
 CfgInfoDlg.collectData = function() {
     this
     .set('id')
-    .set('cfgName')
-    .set('cfgValue')
-    .set('cfgDesc');
+    .set('code')
+    // .set('content')
+    .set('content');
 }
 
 /**
@@ -60,7 +60,7 @@ CfgInfoDlg.addSubmit = function() {
     this.collectData();
 
     //提交信息
-    var ajax = new $ax(Feng.ctxPath + "/cfg/add", function(data){
+    var ajax = new $ax(Feng.ctxPath + "/smsTemplate/add", function(data){
         Feng.success("添加成功!");
         window.parent.Cfg.table.refresh();
         CfgInfoDlg.close();
@@ -80,7 +80,7 @@ CfgInfoDlg.editSubmit = function() {
     this.collectData();
 
     //提交信息
-    var ajax = new $ax(Feng.ctxPath + "/cfg/update", function(data){
+    var ajax = new $ax(Feng.ctxPath + "/smsTemplate/update", function(data){
         Feng.success("修改成功!");
         window.parent.Cfg.table.refresh();
         CfgInfoDlg.close();
